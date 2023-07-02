@@ -4,9 +4,9 @@
   "description": "Este proyecto tiene como objetivo crear una aplicación web que permita a los usuarios gestionar sus finanzas personales de forma fácil y segura. El proyecto utiliza las siguientes tecnologías:",
   "main": "app.js",
   "scripts": {
-    "build": "npx tsc",
-    "start": "node index.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q index.js\""
+    "build": "npx tsc --noEmit false",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.js\""
   },
   "repository": {
     "type": "git",
