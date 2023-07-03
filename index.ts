@@ -1,12 +1,13 @@
 import express, { Express, Request, Response } from "express";
-import dotenv from "dotenv";
+import env from "./dotenvconfig";
 
-dotenv.config();
+import { testDbConnection } from "./db/connect";
 
 const app: Express = express();
-const port = process.env.PORT || 3000;
+const port = env.PORT || 3000;
 
-app.get("/", (req: Request, res: Response) => {
+app.get("/", async (req: Request, res: Response) => {
+  await testDbConnection();
   res.send("Express + TypeScript Server :D ⚡️");
 });
 
